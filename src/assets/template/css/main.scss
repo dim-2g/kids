@@ -1,5 +1,5 @@
 @import 'modules/variables';
-@import '../fonts/Lato/lato.css';
+@import '../fonts/fonts.css';
 @import '../fonts/FontAwesome/font-awesome.min.css';
 @import 'skeleton/skeleton';
 /*@import 'sprites/sprite';*/
@@ -9,7 +9,9 @@
 @import 'modules/contacts';
 @import 'modules/common';
 
-
+body{
+  font-family: 'NeoSans', sans-serif;
+}
 a{
   color: $blue;
   outline: none;
@@ -134,4 +136,96 @@ a{
 .footer{
   background-color: #424242;
   color: #fff;
+}
+
+.catalog{
+  margin-left: -15px;
+  margin-right: -15px;
+  &__item{
+    width: 33.33%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 44px;
+  }
+  &-card{
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    transition: $anim;
+    &:hover{
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    &__name{
+      font-size: 21px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: #098793;
+      color: #fff;
+      text-align: center;
+      min-height: 70px;
+      line-height: 70px;
+      vertical-align: middle;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: 30px;
+    }
+    &__image{
+      min-height: 298px;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    &__box{
+      padding-bottom: 30px;
+      padding-left: 21px;
+      padding-right: 19px;
+    }
+    &__price{
+      color: #098793;
+      font-size: 30px;
+      font-weight: bold;
+      padding-right: 6px;
+      &-line{
+        text-align: center;
+        padding-bottom: 30px;
+      }
+    }
+    &__currence{
+      color: #808080;
+      font-size: 11px;
+      font-weight: normal;
+    }
+    &__action{
+      text-align: center;
+    }
+    &__buy{
+      height: 53px;
+      width: 232px;
+      background-color: #5bd3df;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 4px;
+      text-align: center;
+      border: none;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  }
+}
+.property{
+  &__row{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    font-size: 11px;
+    font-weight: normal;
+    color: #999999;
+    padding-bottom: 20px;
+  }
+  &__value{
+    color: #333333;
+    font-size: 14px;
+    font-weight: normal;
+    padding-bottom: 24px;
+  }
 }
