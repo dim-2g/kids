@@ -383,3 +383,77 @@ a{
     vertical-align: middle;
   }
 }
+.about{
+  &__row{
+    margin-left: 60px;
+    margin-right: 46px;
+  }
+  &__title{
+    color: #4c4c4c;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 44px;
+  }
+  &__item {
+    width: 25%;
+    padding-left: 38px;
+    padding-right: 54px;
+    margin-bottom: 44px;
+  }
+  &__pic{
+    min-width: 166px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px  1px #00838f;
+    transition: all 0.2s;
+  }
+  &__info{
+    padding-top: 120px;
+    text-align: center;
+    color: #3d3d3d;
+    font-size: 18px;
+    line-height: 120%;
+  }
+  &__security{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($security);
+      top: 28px;
+      left: 56px;
+    }
+  }
+  &__heat{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($heat);
+      top: 28px;
+      left: 60px;
+    }
+  }
+  &__color{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($color);
+      top: 34px;
+      left: 56px;
+    }
+  }
+  &__sleep{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($sleep);
+      top: 29px;
+      left: 61px;
+    }
+  }
+}
