@@ -1662,3 +1662,31 @@ body.catalog{
     padding-top: 2px;
   }
 }
+.notfound{
+  margin-top: 18px;
+  min-height: 580px;
+  background: transparent url('../img/404__bg.png') 96px top no-repeat;
+  //opacity: 0.5;
+  &__title{
+    color: #5bd3df;
+    font-size: 80px;
+    text-align: center;
+    //opacity: 1;
+    font-weight: bold;
+    margin-top: 72px;
+
+  }
+  &__text{
+    font-size: 18px;
+    color: #333538;
+    text-align: center;
+    padding-left: 14px;
+  }
+  .xbtn{
+    width: 166px;
+    height: 60px;
+    text-transform: none;
+    margin-top: 92px;
+    font-weight: bold;
+  }
+}
