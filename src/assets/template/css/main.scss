@@ -47,6 +47,9 @@ a{
 .content {
   flex: 1;
 }
+body{
+  background: #fff url('../img/dots__bg.jpg') center top no-repeat;
+}
 body.index{
   background: #fff url('../img/main__bg.jpg') center top no-repeat;
   background-size: auto 900px;
@@ -55,7 +58,7 @@ body.index{
   }
 }
 .header{
-  background: #fff url('../img/header__bg.jpg') center top no-repeat;
+  background: transparent url('../img/header__bg.png') center top no-repeat;
 
   &__main{
     @media($bp-larger-than-tablet){
@@ -118,7 +121,8 @@ body.index{
     flex-direction: row;
     justify-content: space-between;
 
-    background-color: #fff;
+    //background-color: #fff;
+    background-color: transparent;
     margin-left: -15px;
     margin-right: -15px;
     padding-left: 15px;
@@ -420,6 +424,10 @@ body.index{
       vertical-align: middle;
       display: inline-block;
       background-repeat: no-repeat;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #424242;
     }
   }
 }
@@ -1571,12 +1579,19 @@ body.index{
 }
 
 
-body.catalog{
-  background: #fff url('../img/catalog__bg.jpg') center top no-repeat;
+body.dots{
+  background: #fff url('../img/dots__bg.jpg') center top no-repeat;
+}
+#msMiniCart{
+  font-size: 16px;
 }
 .filter{
   margin-bottom: 40px;
   background-color: #fff;
+  display: none;
+  @media($bp-larger-than-desktop){
+    display: block;
+  }
   h4{
     margin: 0;
     color: #808080;
@@ -1660,8 +1675,14 @@ body.catalog{
     align-self: center;
     box-shadow: none;
     padding-top: 2px;
+    line-height: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
+
+
+
 .notfound{
   margin-top: 18px;
   min-height: 580px;
@@ -1688,5 +1709,262 @@ body.catalog{
     text-transform: none;
     margin-top: 92px;
     font-weight: bold;
+  }
+}
+
+.order{
+  margin-bottom: 40px;
+  &__table{
+    padding: 50px;
+    border-radius: 8px;
+    background-color: #FFF;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 4px 8px 0 #ccc;
+  }
+  &__row{
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+    position: relative;
+    justify-content: space-between;
+    padding-right: 40px;
+    align-items: center;
+    &--itogo{
+      border: 0 none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  &__image{
+    flex-shrink: 0;
+    margin-right: 30px;
+    width: 234px;
+    background-size: cover;
+    background-position: center;
+    padding-top: 20px;
+    img{
+      border-radius: 8px;
+    }
+  }
+  &__link{
+    text-align: center;
+    a{
+      color: #5bd3df
+    }
+  }
+  &__product-name{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    flex: 2;
+  }
+  &__remove{
+    position: absolute;
+    top: 0;
+    right: 0;
+    button{
+      color: #5bd3df;
+      font-size: 24px;
+      background-color: transparent;
+      border: 0 none;
+      transition: $anim;
+      &:hover{
+        color: #00838f;
+      }
+    }
+    
+  }
+  &__count{
+    flex: 1;
+    height: 70px;
+    min-width: 120px;
+  }
+  &__price{
+    min-width: 120px;
+    flex: 1;
+    height: 70px;
+  }
+  &__price-line{
+    line-height: 33px;
+    vertical-align: bottom;
+    padding-top: 5px;
+  }
+  &__price-value{
+    color: #098793;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  &__price-currency{
+    color: #808080;
+    font-size: 11px;
+  }
+  &__label{
+    color: #999999;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  &-itogo{
+    &__image{
+      width: 234px;
+      margin-right: 30px;
+    }
+    &__product{
+      flex: 2;
+    }
+    &__count{
+      flex: 1; 
+      font-weight: bold;
+      font-size: 24px;
+      color: #333538;
+      min-width: 120px;
+      box-sizing: border-box;
+      span{
+        margin-left: 20px;
+      }
+    }
+    &__price{
+      flex: 1; 
+      min-width: 120px;
+    }
+  }
+}
+
+.table.auto {
+    width: auto;
+}
+.table {
+    display: table;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+.table .middle {
+    vertical-align: middle;
+}
+.table > * {
+    display: table-cell;
+    padding: 0;
+    margin: 0;
+}
+#msCart [value="cart/change"] {
+    display: none;
+}
+.incrementer.white{
+    margin: 0;
+    user-select: none;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    height: 33px;
+}
+.incrementer.white > *{
+    padding: 3px 0;
+}
+.incrementer.white span{
+    display: block;
+    color: #5bd3df;
+    padding: 2px 7px;
+    font-size: 22px;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1em;
+    font-weight: 500;
+}
+.incrementer.white div:not(:nth-child(2)):hover{
+    background: #ECECEC;
+}
+.incrementer.white div:first-child span{
+    
+}
+.incrementer.white div:last-child span{
+    
+}
+.incrementer.white input[type=text]{
+    width: 40px;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    padding: 4px 10px 0;
+    background: transparent;
+    vertical-align: middle;
+}
+input[type="checkbox"].checkbox {
+  display: none; }
+
+.checkbox-custom {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #8a8a8a;
+  border-radius: 0px;
+  box-sizing: border-box;
+  line-height: 23px;
+  text-align: center; 
+}
+
+.label {
+  display: inline-block;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #b2b2b2;
+  font-weight: normal;
+  font-size: 14px; 
+}
+
+.checkbox-custom {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  cursor: pointer; 
+}
+
+.checkbox:checked + .checkbox-custom::before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  color: #5bd3df; 
+}
+.order-form{
+  padding: 50px;
+  border: 1px solid #54acb4;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  background: #fff url('../img/order-form__bg.jpg') center bottom no-repeat;
+  background-size: 100% auto;
+  input[type="text"]{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+  }
+  &__agree {
+    clear: both;
+    margin-top: 8px;
+    max-width: 263px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -40px;
+    position: relative;
+    line-height: 25px;
+    @media($bp-larger-than-tablet ) {
+        top: 0;
+        text-align: center;
+        max-width: none;
+    }
+    .label{
+        display: inline-block;
+        width: 200px;
+        @media($bp-larger-than-tablet ) {
+            display: inline;
+            width: auto;
+        }
+    }
   }
 }

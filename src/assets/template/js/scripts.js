@@ -80,4 +80,36 @@ $(function() {
         mainClass: 'mobile_menu_bg'
     });
 
+    $(".incrementer .minus").on("click", function (e) {
+        e.preventDefault();
+        var input = $(this).parents(".incrementer").find(".js_zcount");
+        var input_val = parseInt( input.attr("data-current") );
+
+        if(input_val >= 1){
+            input_val--;
+            input.attr("data-current", input_val);
+            input.val(input_val);
+        }
+        if (input.hasClass('count_live')) {
+            input.parents('form').submit();    
+        }
+    });
+
+    $(".incrementer .plus").on("click", function (e) {
+        e.preventDefault();
+        var input = $(this).parents(".incrementer").find(".js_zcount");
+        var input_val = parseInt( input.attr("data-current") );
+
+        if(input_val < 999){
+            input_val++;
+            input.attr("data-current", input_val);
+            input.val(input_val);
+        }
+
+
+        if (input.hasClass('count_live')) {
+            input.parents('form').submit();    
+        }
+    });
+
 });

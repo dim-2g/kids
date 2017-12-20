@@ -69,7 +69,7 @@
         </div>
     </header>
 
-<script>document.body.classList.add("catalog");</script>
+<script>document.body.classList.add("dots");</script>
 
 <link rel="stylesheet" href="/assets/components/msearch2/css/web/default.css" type="text/css" />
 <link rel="stylesheet" href="/assets/components/minishop2/css/web/default.css?v=14f1a1db65" type="text/css" />
@@ -145,7 +145,7 @@
                                 <span class="catalog-card__price">1000</span><span class="catalog-card__currence">руб.</span>
                             </div>
                             <div class="catalog-card__action">
-                                <button type="submit" class="catalog-card__buy">Купить</button>
+                                <button type="submit" class="xbtn">Купить</button>
                             </div>
                         </div>
 
@@ -170,7 +170,7 @@
                                 <span class="catalog-card__price">7999</span><span class="catalog-card__currence">руб.</span>
                             </div>
                             <div class="catalog-card__action">
-                                <button type="submit" class="catalog-card__buy">Купить</button>
+                                <button type="submit" class="xbtn">Купить</button>
                             </div>
                         </div>
 
@@ -195,7 +195,7 @@
                                 <span class="catalog-card__price">5999</span><span class="catalog-card__currence">руб.</span>
                             </div>
                             <div class="catalog-card__action">
-                                <button type="submit" class="catalog-card__buy">Купить</button>
+                                <button type="submit" class="xbtn">Купить</button>
                             </div>
                         </div>
 
@@ -220,7 +220,7 @@
                                 <span class="catalog-card__price">1000</span><span class="catalog-card__currence">руб.</span>
                             </div>
                             <div class="catalog-card__action">
-                                <button type="submit" class="catalog-card__buy">Купить</button>
+                                <button type="submit" class="xbtn">Купить</button>
                             </div>
                         </div>
 
@@ -256,7 +256,6 @@
 <script src="assets/template/vendor/jquery-3.2.1.min.js"></script>
 <script src="assets/template/vendor/slick/slick.js"></script>
 <script src="assets/template/vendor/selectric/jquery.selectric.min.js"></script>
-<script src="/assets/template/vendor/elastic/main3.js"></script>
 <script src="assets/template/vendor/magnific-popup/magnific-popup.js"></script>
 <!--script src="assets/template/vendor/wow.min.js"></script>
 <script>
@@ -266,6 +265,20 @@
 </script-->
 <script src="assets/template/js/scripts.js"></script>
 
+<script type="text/javascript" src="/assets/components/msearch2/js/web/default.js"></script>
+<script type="text/javascript" src="/assets/components/minishop2/js/web/default.js?v=14f1a1db65"></script>
+
+<script type="text/javascript">
+if ($("#mse2_mfilter").length) {
+    if (window.location.hash != "" && mSearch2.Hash.oldbrowser()) {
+        var uri = window.location.hash.replace("#", "?");
+        window.location.href = document.location.pathname + uri;
+    }
+    else {
+        mSearch2.initialize("body");
+    }
+}
+</script>
 
 </body>
 </html>
