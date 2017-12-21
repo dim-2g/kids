@@ -1,16 +1,24 @@
 $(function() {
-    $('.b-product__slider').slick({
+    $('.product-big__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         fade: true,
-        asNavFor: '.b-product__slider-nav'
+        asNavFor: '.product-small__slider',
+        responsive: [
+            {
+                breakpoint: 750,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
     });
 
-    $('.b-product__slider-nav').slick({
+    $('.product-small__slider').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
-        asNavFor: '.b-product__slider',
+        asNavFor: '.product-big__slider',
         dots: false,
         arrows: true,
         centerPadding: '0px',
@@ -21,14 +29,8 @@ $(function() {
             {
                 breakpoint: 1050,
                 settings: {
-                    arrows: true,
+                    arrows: false,
                     slidesToShow: 3
-                }
-            },{
-                breakpoint: 900,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 2
                 }
             }
         ]
@@ -85,7 +87,7 @@ $(function() {
         var input = $(this).parents(".incrementer").find(".js_zcount");
         var input_val = parseInt( input.attr("data-current") );
 
-        if(input_val >= 1){
+        if(input_val > 1){
             input_val--;
             input.attr("data-current", input_val);
             input.val(input_val);
@@ -98,7 +100,7 @@ $(function() {
     $(".incrementer .plus").on("click", function (e) {
         e.preventDefault();
         var input = $(this).parents(".incrementer").find(".js_zcount");
-        var input_val = parseInt( input.attr("data-current") );
+        var input_val = parseInt( input.val() );
 
         if(input_val < 999){
             input_val++;
@@ -112,4 +114,31 @@ $(function() {
         }
     });
 
+    $('.product-big__slider').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        zoom: {
+            enabled: true,
+            duration: 100
+        },
+        mainClass: 'mfp-with-zoom',
+        gallery: {
+            enabled:true
+        }
+    });
 });
+
+$(window).resize(function(){
+    moveto('body.product-page .product__title', '.product__buy', '.product__slider', 750);
+});
+
+function moveto(elem, after_from, after_to, breakpoint){
+    if (elem.length==0) return;
+
+    if ($(window).width()<breakpoint){
+        $(elem).prependTo(after_to);
+    }else{
+        $(elem).prependTo(after_from);
+    }
+
+}
