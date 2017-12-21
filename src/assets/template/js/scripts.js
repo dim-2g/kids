@@ -36,50 +36,15 @@ $(function() {
         ]
     });
 
-    $('.m-reviews__list').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: true,
-        focusOnSelect: true,
-        adaptiveHeight: false,
-        responsive: [
-            {
-                breakpoint: 1000,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
 
 
     $('select.selectric').selectric({
         maxHeight: 210
     });
 
-    $('.select__city .selectric').click(function(){
-        $(this).toggleClass('selectricOpen');
-    });
-
-    $('body').on('mouseleave','.select__city .selectric',function(){
-        $(this).removeClass('selectricOpen');
-    });
 
     $('.zoom').magnificPopup({
         type  : 'image'
-    });
-
-    $('.faq__link').click(function(){
-       $(this).parents('.faq__item').toggleClass('active');
-       return false;
-    });
-
-    $(".toogle-mobile-menu").magnificPopup({
-        type: "inline",
-        midClick: true,
-        mainClass: 'mobile_menu_bg'
     });
 
     $(".incrementer .minus").on("click", function (e) {
@@ -126,6 +91,13 @@ $(function() {
             enabled:true
         }
     });
+    $('.scrollto').click(function(){
+        var id = $(this).attr('href');
+        if ($(id).length>0){
+            $('html,body').animate({ scrollTop: $(id).offset().top }, 1200);
+        }
+        return false;
+    })
 });
 
 $(window).resize(function(){
