@@ -69,6 +69,9 @@ body.index{
   @media($bp-larger-than-tablet){
     background-size: auto;
   }
+  .content{
+    padding-bottom: 0;
+  }
 }
 body  #msMiniCart{
   font-size: 16px;
@@ -176,6 +179,7 @@ body  #msMiniCart{
     line-height: 42px;
     position: relative;
     transition: $anim;
+    font-weight: 500;
     @media($bp-larger-than-tablet){
       display: inline-block;
     }
@@ -228,7 +232,7 @@ body  #msMiniCart{
     text-decoration: none;
     margin-right: 15px;
     height: 48px;
-    line-height: 52px;
+    line-height: 54px;
     width: 48px;
     vertical-align: middle;
     color: #00838f;
@@ -239,16 +243,7 @@ body  #msMiniCart{
   &__cart{
 
 
-    &.hover{
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-      height: 52px;
-      .cart-items{
-        @media($bp-larger-than-tablet) {
-          display: block;
-        }
-      }
-    }
+    
 
     a{
       text-decoration: none;
@@ -261,7 +256,7 @@ body  #msMiniCart{
       top: 100%;
       right: 0;
       background-color: #fff;
-      padding: 10px 16px 10px 10px;
+      padding: 10px 10px 10px 10px;
       border-radius: 10px;
       border-top-right-radius: 0;
       z-index: 100;
@@ -288,7 +283,7 @@ body  #msMiniCart{
   cursor: pointer;
   margin-right: 8px;
   @media($bp-larger-than-tablet) {
-    line-height: 37px;
+    line-height: 44px;
     width: 165px;
     padding: 4px 16px 4px 16px;
     margin-right: 0;
@@ -317,6 +312,16 @@ body  #msMiniCart{
         display: inline-block;
       }
     }
+    &.hover{
+      @media($bp-larger-than-tablet) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        height: 52px;
+        .cart-items{
+          display: block;
+        }
+      }
+    }
   }
 
   &__total{
@@ -328,7 +333,7 @@ body  #msMiniCart{
     text-align: center;
     width: 22px;
     height: 22px;
-    line-height: 26px;
+    line-height: 25px;
     font-weight: bold;
     margin-left: 2px;
     margin-right: 2px;
@@ -344,6 +349,7 @@ body  #msMiniCart{
   &__label{
     display: none;
     letter-spacing: 0.5px;
+    font-weight: 500;
     @media($bp-larger-than-tablet){
       display: inline-block;
     }
@@ -372,6 +378,8 @@ body  #msMiniCart{
   ul{
     margin: 0;
     padding: 0;
+    max-width: 262px;
+
   }
   li{
     list-style-type: none;
@@ -386,6 +394,7 @@ body  #msMiniCart{
     font-weight: bold;
     text-transform: uppercase;
     line-height: 115%;
+    width: 130px;
   }
   &__remove{
     display: inline-block;
@@ -396,6 +405,9 @@ body  #msMiniCart{
     background: transparent;
     border: 0 none;
     transition: $anim;
+    position: absolute;
+    right: 0;
+    top: -3px;
     &:hover{
       color: #00838f;
     }
@@ -403,6 +415,7 @@ body  #msMiniCart{
   &__row{
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
   &__price-name{
     color: #999999;
@@ -416,6 +429,9 @@ body  #msMiniCart{
       font-weight: bold;
       font-size: 16px;
     }
+  }
+  &__body{
+    width: 144px;
   }
 
 
@@ -1565,11 +1581,11 @@ body  #msMiniCart{
     font-size: 8px;
     margin-bottom: 8px;
     @media($bp-larger-than-tablet){
-      font-size: 12px;
+      font-size: 14px;
     }
   }
   &__text{
-    font-size: 12px;
+    font-size: 14px;
     line-height: 150%;
     clear: both;
   }

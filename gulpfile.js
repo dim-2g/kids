@@ -51,6 +51,7 @@ var path = {
     },
     watch: {
         html: 'src/assets/template/html/**/*.html',
+        ie: 'src/assets/template/css/ie.css',
         sass: 'src/assets/template/css/**/*.scss',
         js: 'src/assets/template/js/**/*.js',
         tpl: 'src/assets/template/tpl/**/*.html',
@@ -237,6 +238,10 @@ gulp.task('watch', function(){
     });
     watch([path.watch.sass], function(event, cb) {
         gulp.start('sass:dev');
+    });
+    watch([path.watch.ie], function(event, cb) {
+        gulp.src(path.watch.ie)
+        .pipe(browserSync.reload({stream: true}));
     });
     watch([path.watch.sprites], function(event, cb) {
         gulp.start('sprite:dev');

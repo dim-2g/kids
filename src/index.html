@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/assets/template/vendor/selectric/selectric.css">
     <link rel="stylesheet" href="/assets/template/vendor/magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="/assets/template/css/main.css">
-
+    <!--[if IE]><link href="/assets/template/css/ie.css" rel="stylesheet"><![endif]-->
+    <link href="/assets/template/css/ie.css" rel="stylesheet">
 </head>
 <body>
 
@@ -18,16 +19,16 @@
     <header class="header__main">
         <div class="container">
             <div class="header__body">
-                <a href="/" class="header__logo"><img src="/assets/template/img/logo.png" alt=""></a>
+                <div class="header__logo"><a href="/"><img src="/assets/template/img/logo.png" alt=""></a></div>
                 <a href="tel:+71100000" class="header__phone"> + 7 11 000 00</a>
                 <a href="#" class="header__instagram"><span class="fa fa-instagram"></span></a>
                 <div class="header__cart -hover">
-                    <div id="msMiniCart" class="mini-cart full">
+                    <div id="msMiniCart" class="mini-cart full -hover">
                         <span href="cart">
                             <span class="mini-cart__label">Корзина</span> <span class="mini-cart__icon"><span class="ms2_total_count mini-cart__total">2</span></span>
                         </span>
 
-                   <!------------- Корзина ----------->
+                   
                         <div class="cart-items mini-cart__items">
                             <ul id="mc-dynamic">
                                 <li>
@@ -214,7 +215,7 @@
                 <div class="row">
                     <div class="catalog__item columns">
                         <div class="catalog-card">
-                            <div class="catalog-card__name">Комплект с бетменами</div>
+                            <div class="catalog-card__name"><span>Комплект с бетменами Комплект с бетменами </span></div>
                             <div class="catalog-card__box">
                                 <div class="catalog-card__image" style="background-image: url('/assets/template/img/catalog__image.jpg')"></div>
                                 <div class="catalog-card__property">
