@@ -20,7 +20,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     rename = require('gulp-rename'),
     rigger = require('gulp-rigger'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    autoprefixer = require('gulp-autoprefixer');
 
 // Пути для сборки
 var path = {
@@ -96,6 +97,10 @@ gulp.task('sass:dev', function() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write())
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest(path.src.css))
         .pipe(browserSync.reload({stream: true}));
 });

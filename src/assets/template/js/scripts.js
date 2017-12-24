@@ -50,7 +50,7 @@ $(function() {
     $(".incrementer .minus").on("click", function (e) {
         e.preventDefault();
         var input = $(this).parents(".incrementer").find(".js_zcount");
-        var input_val = parseInt( input.attr("data-current") );
+        var input_val = parseInt( input.val() );
 
         if(input_val > 1){
             input_val--;
@@ -98,6 +98,7 @@ $(function() {
         }
         return false;
     })
+    moveto('body.product-page .product__title', '.product__buy', '.product__slider', 750);
 });
 
 $(window).resize(function(){
